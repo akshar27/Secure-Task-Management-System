@@ -2,6 +2,10 @@
   "name": "@org/api",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "node dist/main.js",
+    "start:dev": "nest start --watch"
+  },
   "nx": {
     "targets": {
       "build": {
@@ -85,12 +89,22 @@
   "dependencies": {
     "@nestjs/common": "^11.0.0",
     "@nestjs/core": "^11.0.0",
+    "@nestjs/jwt": "^11.0.2",
     "@nestjs/platform-express": "^11.0.0",
+    "@nestjs/typeorm": "^11.0.0",
+    "bcrypt": "^6.0.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.3",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
-    "tslib": "^2.3.0"
+    "sqlite3": "^5.1.7",
+    "tslib": "^2.3.0",
+    "typeorm": "^0.3.28"
   },
   "devDependencies": {
+    "@nestjs/cli": "^11.0.14",
     "@nestjs/testing": "^11.0.0"
   }
 }
