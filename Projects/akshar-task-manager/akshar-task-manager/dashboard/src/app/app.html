@@ -1,0 +1,30 @@
+<header style="padding: 12px; border-bottom: 1px solid #ddd;">
+    <h2>Task Manager</h2>
+  </header>
+  
+  <main style="padding: 16px;">
+    <button (click)="login()" [disabled]="token">Login</button>
+    <button (click)="createTask()" [disabled]="!token">Create Task</button>
+    <button (click)="loadTasks()" [disabled]="!token">Load Tasks</button>
+    <button *ngIf="token" (click)="logout()">Logout</button>
+  
+    <p><strong>Status:</strong> {{ status }}</p>
+  
+    <p *ngIf="token">🔐 Token received</p>
+  
+    <ul *ngIf="tasks.length > 0; else noTasks">
+      <li *ngFor="let task of tasks">
+        <strong>{{ task.title }}</strong>
+        <span style="color: gray;">
+          ({{ task.status }} | {{ task.category || 'General' }})
+        </span>
+      </li>
+    </ul>
+  
+    <ng-template #noTasks>
+      <p style="color: #666;">
+        ℹ️ No tasks returned (backend connected)
+      </p>
+    </ng-template>
+  </main>
+  
